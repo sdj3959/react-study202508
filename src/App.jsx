@@ -1,6 +1,7 @@
 import React from 'react';
 import ExpenseList from './components/expenses/ExpenseList.jsx';
 import NewExpense from "./components/new-expense/NewExpense.jsx";
+import CheckBoxStyle from "./components/practice/CheckBoxStyle.jsx";
 
 const App = () => {
   const expenseList = [
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <>
+      <CheckBoxStyle />
       <NewExpense />
       <ExpenseList expenses={expenseList}/>
     </>
