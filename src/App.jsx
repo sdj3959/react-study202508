@@ -1,7 +1,6 @@
 import React from 'react';
 import ExpenseList from './components/expenses/ExpenseList.jsx';
-import Card from "./components/ui/Card.jsx";
-import Counter from "./components/Counter.jsx";
+import NewExpense from "./components/new-expense/NewExpense.jsx";
 
 const App = () => {
   const expenseList = [
@@ -24,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <Counter />
+      <NewExpense />
       <ExpenseList expenses={expenseList}/>
     </>
   );
