@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpenseList from './components/expenses/ExpenseList.jsx';
+import Card from "./components/ui/Card.jsx";
 
 const App = () => {
   const expenseList = [
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <ExpenseList expenses={expenseList} />
+      <ExpenseList expenses={expenseList}/>
     </>
   );
 };
