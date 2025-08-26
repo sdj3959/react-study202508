@@ -37,7 +37,10 @@ const ExpenseForm = ({onAdd}) => {
     console.log('userInput: ', userInput);
 
     // 상위컴포넌트(App)이 내려준 onAddExpense라는 함수를 onAdd로 내려받음
-    onAdd(userInput);
+    onAdd({
+      ...userInput,
+      date: new Date(userInput.date)
+    });
 
     // 입력창 초기화
     /*
