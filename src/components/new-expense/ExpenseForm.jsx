@@ -24,6 +24,16 @@ const ExpenseForm = () => {
     const payload = { title, price, date };
 
     console.log(payload);
+
+    // 입력창 초기화
+    /*
+      input태그에다가 값을 입력하면 -> 상태변수에 저장됨  (단방향)
+      상태변수의 값을 바꾸면 -> input이 갱신된다?  (X)    (양방향)
+     */
+    setTitle('');
+    setPrice(0);
+    setDate(null);
+
   };
 
 
@@ -32,7 +42,11 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onInput={e => setTitle(e.target.value)}/>
+          <input
+            type="text"
+            onInput={e => setTitle(e.target.value)}
+            value={title}
+          />
         </div>
         <div className="new-expense__control">
           <label>Price</label>
@@ -41,6 +55,7 @@ const ExpenseForm = () => {
             min="100"
             step="100"
             onInput={e => setPrice(+e.target.value)}
+            value={price || ''}
           />
         </div>
         <div className="new-expense__control">
@@ -50,6 +65,7 @@ const ExpenseForm = () => {
             min="2019-01-01"
             max={getTodayDate()}
             onInput={e => setDate(e.target.value)}
+            value={date ?? ''}
           />
         </div>
       </div>
