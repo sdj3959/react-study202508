@@ -19,6 +19,11 @@ const App = () => {
       price: 30000,
       date: new Date(2025, 4, 2)
     },
+    {
+      title: '에어컨',
+      price: 1000000,
+      date: new Date(2022, 3, 2)
+    },
   ];
 
   // 상향식 데이터 전달을 위해 하위컴포넌트(ExpenseForm)에게 함수 하나를 내려줌
