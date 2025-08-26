@@ -19,12 +19,30 @@ const ExpenseList = ({ expenses: expenseList }) => {
   // 반복문을 통해 컴포넌트 배열을 리턴하는 함수
   // const foo = () => expenseList.map(ex => <ExpenseItem expense={ex} />);
 
+  // 화면에 조건부로 렌더링할 컴포넌트
+  // let content;
+
+  // 해당년도 지출항목들을 필터링
+  const filteredExpenses = expenseList
+    .filter(ex => ex.date.getFullYear().toString() === year);
+
+  // if (filteredExpenses.length > 0) {
+  //   content = filteredExpenses
+  //     .map(ex => <ExpenseItem key={Math.random().toString()} expense={ex} />);
+  // } else {
+  //   content = <p>아직 해당년도의 지출항목이 없습니다.</p>
+  // }
+
+
   return (
     <Card className='expenses'>
       <ExpenseFilter onChangeFilter={onFilterChange} />
-      {expenseList
-        .filter(ex => ex.date.getFullYear().toString() === year)
-        .map(ex => <ExpenseItem expense={ex} />)}
+      {
+        filteredExpenses.length > 0
+          ? filteredExpenses
+            .map(ex => <ExpenseItem key={Math.random().toString()} expense={ex} />)
+          : <p>아직 해당년도의 지출항목이 없습니다.</p>
+      }
     </Card>
   );
 };
