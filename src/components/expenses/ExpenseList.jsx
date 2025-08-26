@@ -3,7 +3,7 @@ import './ExpenseList.css';
 import ExpenseItem from './ExpenseItem.jsx';
 import Card from '../ui/Card.jsx';
 import ExpenseFilter from './ExpenseFilter.jsx';
-import ExpenseChart from "../chart/ExpenseChart.jsx";
+import ExpenseChart from '../chart/ExpenseChart.jsx';
 
 const ExpenseList = ({ expenses: expenseList }) => {
 
@@ -38,7 +38,7 @@ const ExpenseList = ({ expenses: expenseList }) => {
   return (
     <Card className='expenses'>
       <ExpenseFilter onChangeFilter={onFilterChange} />
-      <ExpenseChart />
+      <ExpenseChart expenses={filteredExpenses} />
 
       {
         filteredExpenses.length > 0
