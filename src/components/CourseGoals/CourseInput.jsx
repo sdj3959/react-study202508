@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CourseInput.css';
+import styles from  './CourseInput.module.css';
 import Button from '../ui/Button';
 
 const CourseInput = ({onAddGoal}) => {
@@ -21,7 +21,7 @@ const CourseInput = ({onAddGoal}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='form-control'>
+      <div className={styles['form-control']}>
         <label>나의 목표</label>
         {/* 입력창에 글씨를 쓰면 courseChangeHandler가 실행돼요. */}
         <input type='text' value={enteredValue} onChange={courseChangeHandler} />
