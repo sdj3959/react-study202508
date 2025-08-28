@@ -29,13 +29,13 @@ const ModalOverlay = ({title, message, onClose}) => {
 const ErrorModal = ({ title, message, onClose }) => {
   return (
     <>
-      <Potal destId='backdrop-root'>
+      <Portal destId='backdrop-root'>
         <BackDrop onClose={onClose} />
-      </Potal>
+      </Portal>
 
-      <Potal destId='overlay-root'>
+      <Portal destId='overlay-root'>
         <ModalOverlay title={title} message={message} onClose={onClose} />
-      </Potal>
+      </Portal>
     </>
   );
 };
