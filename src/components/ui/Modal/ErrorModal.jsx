@@ -29,19 +29,13 @@ const ModalOverlay = ({title, message, onClose}) => {
 const ErrorModal = ({ title, message, onClose }) => {
   return (
     <>
-      {
-        ReactDOM.createPortal(
-          <BackDrop onClose={onClose} />,
-          document.getElementById('backdrop-root')
-        )
-      }
+      <Potal destId='backdrop-root'>
+        <BackDrop onClose={onClose} />
+      </Potal>
 
-      {
-        ReactDOM.createPortal(
-          <ModalOverlay title={title} message={message} onClose={onClose} />,
-          document.getElementById('modal-overlay-root')
-        )
-      }
+      <Potal destId='overlay-root'>
+        <ModalOverlay title={title} message={message} onClose={onClose} />
+      </Potal>
     </>
   );
 };
