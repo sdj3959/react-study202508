@@ -18,7 +18,7 @@ const App = () => {
 
   // side effect (서버에서 데이터를 가져오거나 외부 비동기작업) 처리를 위한 훅(리액트 함수)
   useEffect(() => {
-    console.log('useEffect가 실행됨!' );
+    // console.log('useEffect가 실행됨!' );
     const token = localStorage.getItem('token');
     if (token === '1') {
       setIsLoggedIn(true); // 리 렌더링 발생
