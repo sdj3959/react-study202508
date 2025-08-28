@@ -38,9 +38,10 @@ const TimerChallenge = ({title, targetTime}) => {
     상태변수로 두자니 상태변경이 복잡해진다.
    */
 
+
+
   // 타이머를 시작하는 이벤트
   const handleStart = e => {
-    // 실제 정해진 시간만큼 타이머를 가동
     timerId.current = setInterval(() => {
       setTimeRemaining((prevTime) => prevTime - 10);
     }, 10);
@@ -63,12 +64,17 @@ const TimerChallenge = ({title, targetTime}) => {
     dialogRef.current.showModal();
   };
 
+  // 모달을 닫으면 남은 시간을 초기상태로 리셋
+  const handleReset = () => setTimeRemaining(targetTime * 1000);
+
   return (
     <>
       <ResultModal
         ref={dialogRef}
         result={timeRemaining <= 0 ? 'lost' : 'won'}
         targetTime={targetTime}
+        timeRemaining={timeRemaining}
+        onReset={handleReset}
       />
       <section className="challenge">
         <h2>{title}</h2>
